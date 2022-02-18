@@ -46,6 +46,15 @@ a {
     justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+}
+
 .navbar ul {
     text-decoration: none;
     list-style: none;
@@ -61,8 +70,15 @@ a {
 
 .navbar ul li a:hover {
     border-top: 2px solid;
-    border-color: #0065FC;
-    
+    border-color: #0065FC;    
+}
+
+@media (max-width: 768px) {
+    .navbar ul li a:hover {
+        border-top: none;
+        border-bottom: 2px solid;
+        border-color: #0065FC;    
+    }
 }
 
 /*------------------------------------SEARCHBOX--------------------------------------*/
@@ -71,7 +87,7 @@ a {
     align-items:center;
     flex-wrap: nowrap;
     height: 50px;
-    width: 400px;
+    /* width: 400px; */
 }
 
 .icon-searchboxx {
@@ -114,12 +130,27 @@ a {
 main {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     margin-top: 30px;
     margin-bottom: 0px;
 }
 
+@media (max-width: 768px) {
+    main {
+        align-items: center;
+    }
+}
+
 .filters-title {
     margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+    .filters-title {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+    }
 }
 
 .filters-boxs {
@@ -132,6 +163,11 @@ main {
     margin-left: 20px;
 }
 
+/* @media (max-width: 768px) {
+    .filters-boxs{
+        margin-left: 5px;
+    }
+} */
 .filters-icons {
     display: flex;
     justify-content: center;
@@ -179,98 +215,320 @@ main {
 }
 
 /*-------------------------------SECTION1----------------------------------*/
-.accommodations-and-most-popular {
+.accommodations-popular {
     display: flex;
     gap: 50px;
-    
 }
 
-.link-cards {
-    color: black;
-}
-
-.link-cards:hover {
-    filter: opacity(70%);
-}
-
-.full-star {
-    color:#0065FC
-}
-
-.empty-star {
-    color:#F2F2F2;
-}
-/*--hébegements à Marseille--*/
 .accommodations {
-    display: flex;
-    flex-direction: column;
+    border-radius: 20px;
+    padding: 20px;
     background-color: #F2F2F2;
     flex-basis: 66%;
-    border-radius: 20px;
 }
 
-.title-accommodations {
-    margin-left: 3%;
+.accommodations h2 {
+    margin-left: 20px;
 }
 
-.first-line-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.second-line-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    flex-basis: 29%;
-    background: white;
-    border-radius: 20px; 
-    margin: 2%;
-    box-shadow: 0px 0px 20px 1px lightgrey;
-}
-
-.cards-images {
-    /* height: 100%; */
-    width: 100%;
-    background-size: 100% 100%;
-    object-fit: cover;
-    padding-left: 2%;
-    padding-top: 2%;
-    padding-right: 2%;
-    border-radius: 20px 20px 0px 0px; 
-}
-
-.hostel-name {
-    margin-left: 5%;
-    margin-top: 3%;
-}
-
-.night-price {
-    margin-left: 5%;
-    /* margin-top: -5%; */
-}
-
-.price {
+.accommodations a {
+    text-decoration: none; 
     font-weight: bold;
+    color: black;
+}
+.popular {
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #F2F2F2;
+    flex-basis: 33%;
 }
 
-.card-stars {
-    margin-left: 5%;
-    /* margin-top: -5%; */
+.popular h2 {
+    margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .accommodations-popular {
+        flex-direction: column;
+        /* flex-grow: 1; */
+    }
+
+    .popular {
+        order: -1;
+    }
+}
+
+/*-Hébergements à Marseille-*/
+.accommodations-cards-list {
+    display: flex;
+    justify-content: space-around ;
+    flex-wrap: wrap;
+    flex-basis: 33%;
     margin-bottom: 5%;
 }
 
+@media (max-width: 768px) {
+    .accommodations-cards-list {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .accommodations-cards {
+        width: 100%;
+    }
+}
+
+.accommodations-cards-list div {
+    margin: 1%;    
+}
+
+.full-star {
+    color: #0065FC;
+}
+
+.empty-star {
+    color: #F2F2F2;
+}
 /*--Les plus populaires--*/
-.most-popular {
+.popular-cards-list {
+    display: flex;
+    flex-direction: column;
+    /* height: 90%; */
+    /* flex-basis: 30%; */
+}
+.popular-cards-list div {
+    margin: 3%;
+}
+.icon-popular {
+    font-size: large;
+    color:black;
+}
+
+@media (max-width: 768px) {
+    .popular-cards-list {
+        flex-direction: column;
+    }
+}
+
+/*-Hébergements à marseille cartes--*/
+.accommodations-cards {
+    background-color: white;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0 0 15px darkgrey;
+    flex-grow: 1;
+    max-width: 300px;
+    height: 300px;
+    flex-basis: 30%;
+
+}
+
+.accommodations-cards :hover {
+    filter: opacity(75%);
+}
+
+.accommodations-cards img {
+    border-radius: 20px 20px 0 0;
+    padding: 5px;
+    height: 200px;
+    width: 100%;
+    max-width: auto;
+    object-fit: cover;
+}
+
+.accommodations-informations-cards {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+}
+
+.accommodations-informations-cards h3 {
+    margin-top: 0.5px;
+}
+
+.accommodations-informations-cards .stars {
+    margin-top: -10px;
+}
+/*--les plus populaires cartes--*/
+.popular-cards {
+    display: flex;
+    background-color: white;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0 0 15px darkgray;
+    /* max-width: auto; */
+    max-height: 200px;
+}
+
+.popular-cards :hover {
+    filter: opacity(75%);
+}
+.popular-cards img {
+    border-radius: 20px 0 0 20px;
+    padding: 5px;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+.pop-informations-cards {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+.pop-informations-cards h3 {
+    margin-top: 5px;
+}
+.price {
+    margin-top: -10px;
+}
+
+.stars {
+    margin-top: 75px;
+}
+
+.popular-cards a {
+    color: black;
+}
+
+/*--Activités--*/
+.activities {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    padding-bottom: 20px;
     background-color: #F2F2F2;
-    flex-basis: 33%;
-    border-radius: 20px;
+    border-radius: 20px 20px 20px 20px;
+    /* width: auto; */
+    /* height: 500px; */
+}
+
+.activities h2 {
+    padding: 20px;
+}
+
+.activities-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .activities-list {
+        flex-direction: column;
+    }
+}
+/*--Cartes activités--*/
+.activities-cards {
+    border-radius: 20px 20px 20px 20px;
+    display: flex;
+    background-color: white;
+    max-width: 400px;
+    /* height: 370px; */
+}
+
+.activities-cards a,
+.activities-duo-cards a {
+    color: black;
+}
+
+.activities-cards a :hover,
+.activities-duo-cards a :hover {
+    filter: opacity(75%);
+}
+
+.activities-cards img {
+    border-radius: 20px 20px 0 0;
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.activities-cards h3 {
+    margin-left: 20px;
+}
+
+.activities-duo-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    /* height: 300px; */
+}
+
+.activities-duo-cards h3 {
+    margin-left: 20px;
+}
+
+.card-activity-2 {
+    border-radius: 20px 20px 20px 20px;
+    background-color: white;
+}
+
+.card-activity-2 img {
+    border-radius: 20px 20px 0 0;
+    height: 150px;
+    width: 400px;
+    object-fit: cover;
+}
+
+.card-activity-3 {
+    border-radius: 20px 20px 20px 20px;
+    background-color: white;
+}
+
+.card-activity-3 img {
+    border-radius: 20px 20px 0 0;
+    height: 75px;
+    width: 400px;
+    object-fit: cover;
+}
+
+.card-activity-5 {
+    border-radius: 20px 20px 20px 20px;
+    background-color: white;
+}
+
+.card-activity-5 img {
+    border-radius: 20px 20px 0 0;
+    height: 110px;
+    width: 400px;
+    object-fit: cover;
+}
+
+.card-activity-6 {
+    border-radius: 20px 20px 20px 20px;
+    background-color: white;
+}
+
+.card-activity-6 img {
+    border-radius: 20px 20px 0 0;
+    height: 110px;
+    width: 400px;
+    object-fit: cover;
+}
+
+/*--FOOTER--*/
+.end {
+    background-color: #F2F2F2;
+    border-radius: 20px 20px 20px 20px;
+    display: flex;
+    align-items: flex-start;
+    /* justify-content: space-between; */
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 410px;
+    padding-left: 20px;
+}
+
+.end a {
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .end{
+        flex-direction: column;
+        gap: 5%;
+    }
 }
