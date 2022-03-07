@@ -114,7 +114,7 @@ a {
     }
 }
 
-.icon-searchboxx {
+.icon-searchbox {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -467,6 +467,18 @@ main {
     width: 100%;
 }
 
+@media (max-width: 768px) {
+    .accommodations-informations-cards{
+        padding: 2px;
+        gap: 15px;
+    }
+}
+@media (max-width: 414px) {
+    .accommodations-informations-cards{
+        gap: 1px;
+    }
+}
+
 .accommodations-informations-cards h3 {
     margin-top: -2%;
 }
@@ -579,6 +591,26 @@ main {
     display: flex;
     margin-top: auto;
 }
+
+@media screen and (max-width: 992px) {
+    .flex img {
+        min-width: 35vh;
+     
+    }
+  }
+
+@media screen and (max-width: 768px) {
+    .flex img {
+        min-width: 25vh;
+     
+    }
+  }
+
+@media screen and (max-width: 768px) {
+    .popular-cards {
+        max-width: 90vw;
+    }
+  }
 /*------------------------------POURQUOI CA N4EST PAS PRIS EN COMPTE ???---------
 /* @media (max-width= 992px) {
     .popular-cards img {
@@ -803,7 +835,6 @@ main {
 
 .activities-card5 img {
     object-fit: cover;
-    object-position: top;
     border-radius: 20px 20px 0 0;
     height: 20vh;
     width: 20vw;
@@ -837,7 +868,6 @@ main {
 
 .activities-card6 img {
     object-fit: cover;
-    object-position: top;
     border-radius: 20px 20px 0 0;
     height: 20vh;
     width: 20vw;
