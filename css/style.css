@@ -947,8 +947,10 @@ main {
     background-color: #F2F2F2;
     display: flex;
     align-items: flex-start;
-    margin-top: 2%;
+    margin-top: 3%;
     gap: 20%;
+    padding-top: 2%;
+    padding-bottom: 2%;
     padding-left: 15%;
     margin-left: -15%;
     margin-right: -15%;
@@ -984,5 +986,6 @@ main {
 @media (max-width: 414px) {
     .end {
         padding-left: 25px;
+        padding-bottom: 10%;
     }
 }
